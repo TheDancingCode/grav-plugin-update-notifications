@@ -1,7 +1,7 @@
 name: Update Notifications
 slug: update-notifications
 type: plugin
-version: 1.0.0
+version: 1.0.1
 description: Get notified of plugin, theme and core updates by email
 icon: bell
 author:
