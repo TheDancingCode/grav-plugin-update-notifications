@@ -1,0 +1,7 @@
+enabled: true
+core_updates_enabled: true
+plugin_updates_enabled: true
+theme_updates_enabled: true
+from:
+to:
+frequency: '0 0 * * *'

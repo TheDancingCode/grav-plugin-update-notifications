@@ -1,0 +1,6 @@
+en:
+  PLUGIN_UPDATE_NOTIFICATIONS:
+    CORE_UPDATES: Notifications for core updates
+    PLUGIN_UPDATES: Notifications for plugin updates
+    THEME_UPDATES: Notifications for theme updates
+    FREQUENCY: Frequency

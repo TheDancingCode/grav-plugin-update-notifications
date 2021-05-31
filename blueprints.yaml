@@ -1,0 +1,81 @@
+name: Update Notifications
+slug: update-notifications
+type: plugin
+version: 0.1.0
+description: Get notified of plugin, theme and core updates by email
+icon: bell
+author:
+  name: Thomas Vantuycom
+  email: thomasvantuycom@protonmail.com
+homepage: https://github.com/TheDancingCode/grav-plugin-update-notifications
+keywords: grav, plugin, updates, upgrades, notifications, email
+bugs: https://github.com/TheDancingCode/grav-plugin-update-notifications/issues
+docs: https://github.com/TheDancingCode/grav-plugin-update-notifications/blob/develop/README.md
+license: MIT
+
+dependencies:
+  - { name: grav, version: '>=1.6.0' }
+
+form:
+  validation: loose
+  fields:
+    enabled:
+      type: toggle
+      label: PLUGIN_ADMIN.PLUGIN_STATUS
+      highlight: 1
+      default: 0
+      options:
+        1: PLUGIN_ADMIN.ENABLED
+        0: PLUGIN_ADMIN.DISABLED
+      validate:
+        type: bool
+    core_updates_enabled:
+      type: toggle
+      label: PLUGIN_UPDATE_NOTIFICATIONS.CORE_UPDATES
+      highlight: 1
+      default: 1
+      options:
+        1: PLUGIN_ADMIN.ENABLED
+        0: PLUGIN_ADMIN.DISABLED
+      validate:
+        type: bool
+    plugin_updates_enabled:
+      type: toggle
+      label: PLUGIN_UPDATE_NOTIFICATIONS.PLUGIN_UPDATES
+      highlight: 1
+      default: 1
+      options:
+        1: PLUGIN_ADMIN.ENABLED
+        0: PLUGIN_ADMIN.DISABLED
+      validate:
+        type: bool
+    theme_updates_enabled:
+      type: toggle
+      label: PLUGIN_UPDATE_NOTIFICATIONS.THEME_UPDATES
+      highlight: 1
+      default: 1
+      options:
+        1: PLUGIN_ADMIN.ENABLED
+        0: PLUGIN_ADMIN.DISABLED
+      validate:
+        type: bool
+    from:
+      type: email
+      size: medium
+      label: PLUGIN_EMAIL.EMAIL_FORM
+      data-default@: '\Grav\Plugin\UpdateNotificationsPlugin::getFromAddress'
+      validate:
+        required: true
+    to:
+      type: email
+      size: medium
+      label: PLUGIN_EMAIL.EMAIL_TO
+      multiple: true
+      validate:
+        required: true
+    frequency:
+      type: cron
+      label: PLUGIN_UPDATE_NOTIFICATIONS.FREQUENCY
+      size: medium
+      default: '0 0 * * *'
+      placeholder: '* * * * *'
